@@ -17,7 +17,7 @@ gender:<input type="radio" value="male" name="gender" /> Male <input type="radio
 <br><br>
 city:<select name="city">
 <option> select city</option>
-<option>Delhi</option>
+<option>Italy</option>
 <option>mumbai</option>
 <option>Pune</option>
 <option>Banglore</option>
