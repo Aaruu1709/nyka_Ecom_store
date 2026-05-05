@@ -64,12 +64,33 @@ public class Register extends HttpServlet {
 			ps.setString(5, myCity);
 			ps.setString(6, "user");
 
-			int count = ps.executeUpdate();// it return integer result
+			// ps is a variable of type PreparedStatement.
+//			It holds the prepared SQL query object.
+			// setString() is a method of PreparedStatement.
+			// It is used to set a String value to a ? placeholder in the SQL query.
+//			The first parameter is the position (index starts from 1).
+//			The second parameter is the actual value to pass.
 
+			int count = ps.executeUpdate();// it return integer result
+//executeUpdate() is a method of PreparedStatement (also in Statement) used to execute SQL queries that modify data.
+//			It is used for INSERT, UPDATE, DELETE queries.
+//			It executes the SQL statement on the database.
+//			It returns an int value.
+//			The returned int represents number of rows affected.
+//			👉 If rows = 1 → one row updated
+//			👉 If rows = 0 → no row affected
+
+//			SELECT queries (use executeQuery() instead)
 			if (count > 0) {
 
+//				resp is an object of HttpServletResponse
+//				sendRedirect() is a method used to redirect the client (browser) to another page
 				// redirect from register to login if sucess
 				resp.sendRedirect("login.jsp");
+//				It sends a response back to the browser with a redirect instruction
+//				The browser makes a new request to login.jsp
+//				The URL changes in the browser
+//				It is a client-side redirect
 
 			} else {
 				resp.setContentType("text/html");
@@ -100,3 +121,11 @@ public class Register extends HttpServlet {
 //It takes fully qualified class name (String) as input.
 //It loads and initializes the class into JVM memory.
 //It throws ClassNotFoundException if class is not found.
+
+//include() is a method of RequestDispatcher used to include the content of another resource (JSP/Servlet) into the current response.
+//“Take the output of header.jsp and add it into the current page.”
+
+//It includes content from another resource into the same response
+//It does NOT create a new request
+//The URL does NOT change
+//It is a server-side operation
