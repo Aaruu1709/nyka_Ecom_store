@@ -37,12 +37,25 @@ public class Register extends HttpServlet {
 		String myCity = req.getParameter("city");
 		String myRole = req.getParameter("role");
 
+		// In Java (JDBC), DriverManager is a class used to manage database drivers and
+		// establish a connection to the database.
+		// it connects your Java application to the database.
+		// It automatically selects the appropriate database driver.
+		// The method getConnection() returns a👉 Connection object
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
+//			Class.forName(...)
+//		It is used to load a class into memory at runtime.
+//			It belongs to the Class class in Java.
+//			It is commonly used in JDBC to load the database driver.
+//			When the class loads, its static block registers the driver automatically.	
+
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/naykafashion", "root", "root");
+//👉 Without con, Java doesn’t know which database to run the query on
 
 			PreparedStatement ps = con.prepareStatement(
 					"INSERT INTO naykausers(name, email, password, gender, city,role) VALUES(?,?,?,?,?,?)");
+//👉 You must call first (connection) before placing an order (query)
 
 			ps.setString(1, myName);
 			ps.setString(2, myEmail);
@@ -76,3 +89,14 @@ public class Register extends HttpServlet {
 		}
 	}
 }
+
+//Class is a built-in Java class in java.lang package.
+//It represents metadata (information) of a class at runtime.
+//It is part of reflection API (used to inspect classes dynamically).
+//It allows operations like load
+
+//🔹 About forName() –
+//It is a static method of the Class class.
+//It takes fully qualified class name (String) as input.
+//It loads and initializes the class into JVM memory.
+//It throws ClassNotFoundException if class is not found.
