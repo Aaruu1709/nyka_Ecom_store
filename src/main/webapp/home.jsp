@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Home - Products</title>
+<title>Home - Products page</title>
 </head>
 <body>
 

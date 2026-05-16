@@ -12,7 +12,7 @@ if(role == null || !role.equals("admin")) {
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Admin page</title>
 </head>
 <body>
 <h2>Admin Dashboard</h2>

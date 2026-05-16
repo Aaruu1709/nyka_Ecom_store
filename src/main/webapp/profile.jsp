@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Profile page</title>
 </head>
 <body>
 <h1>profile page</h1>
