@@ -74,4 +74,4 @@ This project demonstrates **JDBC, Servlets, JSP, and MySQL** with full CRUD oper
 
 
 ```bash
-git clone https://github.com/your-username/nayka-ecommerce.git
+git clone https://github.com/Aaruu1709/nayka-ecommerce.git
