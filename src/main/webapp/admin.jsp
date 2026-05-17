@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%
-String role = (String) session.getAttribute("role");
+String role = (String) session.getAttribute("role");//typrcast to String
+//here we get session data which created during request 
 
 if(role == null || !role.equals("admin")) {
     response.sendRedirect("login.jsp");
