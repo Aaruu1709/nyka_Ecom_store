@@ -99,10 +99,10 @@ This project demonstrates **JDBC, Servlets, JSP, and MySQL** with full CRUD oper
 
 ---
 
+git clone https://github.com/Aaruu1709/nayka-ecommerce.git
 
 
 ```bash
-git clone https://github.com/Aaruu1709/nayka-ecommerce.git
 
 
 
