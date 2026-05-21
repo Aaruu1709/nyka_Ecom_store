@@ -22,6 +22,8 @@ public class AddProduct extends HttpServlet {
 		String name = req.getParameter("name");
 		double price = Double.parseDouble(req.getParameter("price"));
 		String description = req.getParameter("description");
+		String image = req.getParameter("image");
+		System.out.println(image);
 
 		try {
 			// 2. Load driver
@@ -35,13 +37,16 @@ public class AddProduct extends HttpServlet {
 			p.setName(name);
 			p.setPrice(price);
 			p.setDescription(description);
+			p.setImage(image);
 
 			// 5. Insert into DB
-			PreparedStatement ps = con.prepareStatement("INSERT INTO products(name, price, description) VALUES(?,?,?)");
+			PreparedStatement ps = con
+					.prepareStatement("INSERT INTO products(name, price, description,image) VALUES(?,?,?,?)");
 
 			ps.setString(1, p.getName());
 			ps.setDouble(2, p.getPrice());
 			ps.setString(3, p.getDescription());
+			ps.setString(4, p.getImage());
 
 			int count = ps.executeUpdate();
 
